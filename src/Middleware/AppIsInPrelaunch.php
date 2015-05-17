@@ -5,7 +5,8 @@ use Closure;
 class AppIsInPrelaunch {
 
 	/**
-	 * Handle an incoming request.
+	 * Redirects the user to the prelaunch route if the Enviroment
+	 * APP_PRELAUNCH is set to true
 	 *
 	 * @param  \Illuminate\Http\Request  $request
 	 * @param  \Closure  $next

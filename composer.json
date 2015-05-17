@@ -1,6 +1,7 @@
 {
     "name": "tecbeast/prelaunch",
     "description": "Offers to collect prelaunch email and list them in an admin route",
+    "license" : "MIT",
     "authors": [
         {
             "name": "Tobias Kriebisch",
