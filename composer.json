@@ -1,0 +1,26 @@
+{
+    "name": "tecbeast/prelaunch",
+    "description": "Offers to collect prelaunch email and list them in an admin route",
+    "authors": [
+        {
+            "name": "Tobias Kriebisch",
+            "email": "t.kriebisch@tecbeast.de"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    },
+  	"require-dev": {
+        "phpspec/phpspec": "~2.0",
+        "laravel/framework": "5.0.*"
+    },
+    "config": { 
+        "bin-dir": "bin" 
+    },
+    "autoload": {
+        "psr-4": {
+            "TecBeast\\PreLaunch\\": "src"
+        }
+    }
+}   
