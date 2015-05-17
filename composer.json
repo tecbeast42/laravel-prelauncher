@@ -5,12 +5,13 @@
     "authors": [
         {
             "name": "Tobias Kriebisch",
-            "email": "t.kriebisch@tecbeast.de"
+            "email": "github@tecbeast.de"
         }
     ],
     "minimum-stability": "dev",
     "require": {
-
+        "laravel/framework": "5.0.*",
+        "illuminate/html": "5.*"
     },
   	"require-dev": {
         "phpspec/phpspec": "~2.0",
