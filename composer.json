@@ -1,6 +1,6 @@
 {
     "name": "tecbeast/prelaunch",
-    "description": "Offers to collect prelaunch email and list them in an admin route",
+    "description": "A Laravel Package for an easy Prelauncher which can be removed in a few steps after the App goes in production.",
     "license" : "MIT",
     "authors": [
         {
