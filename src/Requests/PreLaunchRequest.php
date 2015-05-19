@@ -14,7 +14,7 @@ class PreLaunchRequest extends Request {
 	{
 		return [
 			'email' => 'required|email|unique:potential_clients',
-			'reserved_username' => 'between:'.Config::get('prelaunch.username_min').','.Config::get('prelaunch.username_max').'|unique:potential_clients',
+			'reserved_username' => Config::get('prelaunch.username_validation_rules').'|unique:potential_clients',
 			'g-recaptcha-response' => 'required',
 		];
 	}

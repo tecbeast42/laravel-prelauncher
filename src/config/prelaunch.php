@@ -2,6 +2,7 @@
 
 return [
 	'collect_usernames' => true,
-	'username_max' => 25,
-	'username_min' => 4,
+	'username_validation_rules' => 'between:4,20', //Laravel filter string unique is will be appended
+	'use_google_recaptcha' => true,
+	'prelaunch_site_title' => 'Easy Laravel Prelauncher',
 ];
