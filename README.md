@@ -7,6 +7,7 @@ A Laravel Package for an easy Prelauncher which can be removed in a few steps af
 - Add Middleware TecBeast/PreLaunch/Middleware/AppIsInPreLaunch
 - Add APP_PRELAUNCH=true to .env to enable the prelaunch system
 - Add Route::controller to your routes file 
+
 	(optional set url / to prelauncher)
 	```
 	Route::get('/', '\TecBeast\PreLaunch\Controllers\PreLaunchController@getIndex');
