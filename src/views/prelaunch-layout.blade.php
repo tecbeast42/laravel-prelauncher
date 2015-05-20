@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>{{Config::get('prelaunch_site_title')}}</title>
+	<title>{{Config::get('prelaunch.prelaunch_site_title')}}</title>
 </head>
 <body>
 	@yield('content')
