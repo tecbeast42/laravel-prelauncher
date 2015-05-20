@@ -16,11 +16,10 @@ class PreLaunchServiceProvider extends ServiceProvider {
 
 		$this->loadViewsFrom(__DIR__.'/views', 'prelaunch');
 		$this->publishes([
-        __DIR__.'/views' => base_path('resources/views/vendor/prelaunch'),
+        	__DIR__.'/views' => base_path('resources/views/vendor/prelaunch'),
+        	realpath(__DIR__.'/migrations') => $this->app->databasePath().'/migrations',
+        	__DIR__.'/config/prelaunch.php' => config_path('prelaunch.php'),
     	]);
-		$this->publishes([
-			realpath(__DIR__.'/migrations') => $this->app->databasePath().'/migrations',
-			]);
 	}
 
 }
