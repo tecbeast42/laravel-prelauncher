@@ -1,4 +1,4 @@
-{!! Form::open(['route' => 'prelaunch','method' => 'put','class' => 'prelaunch-form']) !!}
+{!! Form::open(['url' => 'prelaunch','method' => 'put','class' => 'prelaunch-form']) !!}
 	<div class="form-group">
 		{!! Form::text('email',null,['placeholder' => 'Email','id'=>'email','class' => 'form-control']) !!}
 	</div>
