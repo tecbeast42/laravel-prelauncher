@@ -15,7 +15,7 @@ class AppIsInPrelaunch {
 	public function handle($request, Closure $next)
 	{
 		if(env('APP_PRELAUNCH',false) AND !\Request::is('prelaunch*')) {
-			return redirect()->route('prelaunch');
+			return redirect()->url('prelaunch');
 		}
 
 		return $next($request);
