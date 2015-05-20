@@ -16,6 +16,9 @@ class PreLaunchServiceProvider extends ServiceProvider {
 
 		$this->loadViewsFrom(__DIR__.'/views', 'prelaunch');
 		$this->publishes([
+        __DIR__.'/views' => base_path('resources/views/vendor/prelaunch'),
+    	]);
+		$this->publishes([
 			realpath(__DIR__.'/migrations') => $this->app->databasePath().'/migrations',
 			]);
 	}
