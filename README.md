@@ -1,17 +1,16 @@
 # laravel-prelauncher
 A Laravel Package for an easy Prelauncher which can be removed in a few steps after the App goes in production.
 
+## What will it do
+- A Middleware will lock you're App down to use urls only with prelaunch/*
+- The included Controller takes care of the rest
+
 ## Installation
 - Register the Service Provider TecBeast/PreLaunch/PreLaunchServiceProvider
 - Edit Config as you wish
 - Add Middleware TecBeast/PreLaunch/Middleware/AppIsInPreLaunch
 - Add APP_PRELAUNCH=true to .env to enable the prelaunch system
 - Add Route::controller to your routes file 
-
-optional set url('/') to prelauncher
-```
-Route::get('/', '\TecBeast\PreLaunch\Controllers\PreLaunchController@getIndex');
-```
 
 ## Usage
 - switch PreLauncher on and off by using APP_PRELAUNCH in your .env file
