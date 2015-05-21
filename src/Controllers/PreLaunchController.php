@@ -53,7 +53,6 @@ class PreLaunchController extends Controller {
 		$context  = stream_context_create($options);
 		$result = file_get_contents($url, false, $context);
 
-		dd($result);
-		return true;
+		return json_decode($result)->success;
 	}
 }
