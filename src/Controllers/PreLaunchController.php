@@ -34,6 +34,21 @@ class PreLaunchController extends Controller {
 	}
 
 	/**
+	 * confirms that the email is valid via a user link 
+	 */
+	public function getEmailConfirmation($token)
+	{	
+		if(PotentialClient::where('email_confirmation_key',$token)->count() != 1)
+			return redirect('prelaunch');
+
+		$client = PotentialClient::where('email_confirmation_key',$token)->first();
+		$client->email_confirmation_key = null;
+		$client->email_confirmed = true;
+		$client->save();
+		return redirect('prelaunch')->with('fadeMsg','Deine Email Adresse wurde bestätigt.');
+	}
+
+	/**
 	 * validate google reCaptcha
 	 */
 	protected function validateGoogleReCaptcha($token)

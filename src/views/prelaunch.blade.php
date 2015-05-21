@@ -4,9 +4,12 @@
 	<main>
 		@if(count($errors) > 0)
 			<div class="msg-box">
-					@foreach($errors->all() as $error)
-						<div class="alert alert-danger" role="alert">{{ $error }}</div>
-					@endforeach
+				@foreach($errors->all() as $error)
+					<div class="alert alert-danger" role="alert">{{ $error }}</div>
+				@endforeach
+				@if(Session::has('fadeMsg'))
+				<div class="alert alert-success" role="alert">{{ Session::get('fadeMsg') }}</div>
+				@endif
 			</div>
 		@endif
 		<div class="prelaunch-text">
