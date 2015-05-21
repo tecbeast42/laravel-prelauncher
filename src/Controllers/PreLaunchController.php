@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use TecBeast\PreLaunch\Requests\PreLaunchRequest;
 use TecBeast\PreLaunch\Models\PotentialClient;
 use Config;
+use Mail;
 
 class PreLaunchController extends Controller {
 
@@ -19,7 +20,13 @@ class PreLaunchController extends Controller {
 				return redirect()->back()->with('fadeMsg','Google reCaptcha failed, please try again');
 			}
 		}
-		PotentialClient::create($request->all());
+
+		//Create new Client in DB
+		$client = PotentialClient::create($request->all());
+
+		//Send verification Email
+		$this->sendVerificationEmail($client);
+
 		return redirect()->back()->with('fadeMsg','Du wurdest eingetragen.');
 	}
 
@@ -69,5 +76,16 @@ class PreLaunchController extends Controller {
 		$result = file_get_contents($url, false, $context);
 
 		return json_decode($result)->success;
+	}
+
+	protected function sendVerificationEmail(PotentialClient $client)
+	{
+		Mail::send('prelaunch::confirmation-email',['client' => $client], function($message)
+		{
+			$message->to(
+				$client->email,
+				(is_null($client->reserved_username) ? "" :  $client->reserved_username) 
+			)->subject(Config::get('prelaunch.emailSubject'));
+		});
 	}
 }
