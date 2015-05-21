@@ -17,7 +17,7 @@ class PotentialClient extends Model {
 		 * Set email_confirmation_key to a random string
 		 */
 		static::creating(function($user){
-			$user->email_confirmation_key = str_random(40);
+			$user->email_confirmation_key = str_random(30);
 		});
 	}
 }

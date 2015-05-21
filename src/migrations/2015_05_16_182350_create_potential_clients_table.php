@@ -18,7 +18,7 @@ class CreatePotentialClientsTable extends Migration {
 			$table->string('email')->unique();
 			$table->boolean('newsletter')->default(0);
 			$table->boolean('email_confirmed')->default(0);
-			$table->string('email_confirmation_key',32)->nullable();
+			$table->string('email_confirmation_key',30)->nullable();
 			$table->string('reserved_username')->unique()->nullable()->default(null);
 			$table->timestamps();
 		});

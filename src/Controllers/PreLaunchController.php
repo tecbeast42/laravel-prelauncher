@@ -80,7 +80,7 @@ class PreLaunchController extends Controller {
 
 	protected function sendVerificationEmail(PotentialClient $client)
 	{
-		Mail::send('prelaunch::confirmation-email',['client' => $client], function($message)
+		Mail::send('prelaunch::confirmation-email',['client' => $client], function($message) use ($client)
 		{
 			$message->to(
 				$client->email,
