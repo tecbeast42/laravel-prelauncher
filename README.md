@@ -10,6 +10,7 @@ A Laravel Package for an easy Prelauncher which can be removed in a few steps af
 - Edit Config as you wish
 - Add Middleware TecBeast/PreLaunch/Middleware/AppIsInPreLaunch
 - Add APP_PRELAUNCH=true to .env to enable the prelaunch system
+- Add GOOGLE_RECAPTACHA_SECRET=googles_secret to .env for Google reCaptcha
 - Add Route::controller to your routes file 
 
 ## Usage
@@ -20,3 +21,4 @@ A Laravel Package for an easy Prelauncher which can be removed in a few steps af
 - Remove Routes
 - Remove ServiceProvider
 - Optional Remove Migration and Database Table
+- Clean up .env

@@ -6,4 +6,5 @@ return [
 	'use_google_recaptcha' => true,
 	'prelaunch_site_title' => 'Easy Laravel Prelauncher',
 	'google_reCaptcha_html' => '', //Paste the div for google reCaptcha here
+	'google_reCaptcha_verfiy_url' => 'https://www.google.com/recaptcha/api/siteverify',
 ];
