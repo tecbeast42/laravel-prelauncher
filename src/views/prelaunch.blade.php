@@ -4,11 +4,9 @@
 	<main>
 		@if(count($errors) > 0)
 			<div class="msg-box">
-				<ul class="alert alert-danger" role="alert">
 					@foreach($errors->all() as $error)
-						<li>{{ $error }}</li>
+						<div class="alert alert-danger" role="alert">{{ $error }}</div>
 					@endforeach
-				</ul>
 			</div>
 		@endif
 		<div class="prelaunch-text">
