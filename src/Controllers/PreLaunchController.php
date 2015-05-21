@@ -14,7 +14,7 @@ class PreLaunchController extends Controller {
 
 	public function putIndex(PreLaunchRequest $request)
 	{
-		if(Config::get('use_google_recaptcha')) { //if google reCaptcha is enabled
+		if(Config::get('prelaunch.use_google_recaptcha')) { //if google reCaptcha is enabled
 			if(!$this->validateGoogleReCaptcha($request->get('g-recaptcha-response'))) { //validate Google recaptcha
 				return redirect()->back()->with('fadeMsg','Google reCaptcha failed, please try again');
 			}
@@ -38,7 +38,7 @@ class PreLaunchController extends Controller {
 	 */
 	protected function validateGoogleReCaptcha($token)
 	{
-		$url = Config::get('google_reCaptcha_verfiy_url');
+		$url = Config::get('prelaunch.google_reCaptcha_verfiy_url');
 		$secret = env('GOOGLE_RECAPTACHA_SECRET');
 		$data = array('secret' => $secret, 'response' => $token);
 
