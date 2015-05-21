@@ -11,7 +11,7 @@ class PotentialClient extends Model {
 	 */
 	public static function boot()
 	{
-		parrent::boot();
+		parent::boot();
 
 		/**
 		 * Set email_confirmation_key to a random string
